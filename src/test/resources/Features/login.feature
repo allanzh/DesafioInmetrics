@@ -1,15 +1,16 @@
-Feature: Testes de Login no sistema
+#language: pt
+Funcionalidade: Testes de Login no sistema
 
-Scenario: Verificar login com credenciais válidas
+Cenario: Verificar login com credenciais válidas
 
-Given Usuario deseja efetuar login no sistema
-When o usuario digitar o login
-And o usuario digitar a senha
-Then ele sera direcionado para a home
+Dado Usuario deseja efetuar login no sistema
+Quando o usuario digitar o login
+E o usuario digitar a senha
+Entao ele sera direcionado para a home
 
-Scenario: Verificar login com credenciais inválidas
+Cenario: Verificar login com credenciais inválidas
 
-Given Usuario deseja efetuar login no sistema
-When o usuario digitar o login errado
-And o usuario digitar a senha
-Then o sistema notificará um erro
+Dado Usuario deseja efetuar login no sistema
+Quando o usuario digitar o login errado
+E o usuario digitar a senha
+Entao o sistema notificará um erro

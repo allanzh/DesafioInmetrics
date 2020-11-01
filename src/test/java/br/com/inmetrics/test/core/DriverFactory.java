@@ -1,4 +1,5 @@
 package br.com.inmetrics.test.core;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -18,8 +19,24 @@ public class DriverFactory {
 	public static void killDriver() {
 		if(driver != null) { 
 			driver.quit();
-			driver.close();
+			//driver.close();
 		} 
 		driver = null;
+	}
+	
+	public static void navigateTo(String url) {
+		driver.navigate().to(url);
+	}
+	
+	public static void setText(String xpath, String value) {
+		driver.findElement(By.xpath(xpath)).sendKeys(value);
+	}
+	
+	public static void click(String xpath) {
+		driver.findElement(By.xpath(xpath)).click();
+	}
+	
+	public static Boolean verifyElementPresent(String xpath) {
+		return (driver.findElement(By.xpath(xpath)) != null);
 	}
 }
