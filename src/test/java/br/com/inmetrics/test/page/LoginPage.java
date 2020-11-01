@@ -4,23 +4,23 @@ import br.com.inmetrics.test.core.DriverFactory;
 
 public class LoginPage {
 	
-	public static void acessarLogin() {
+	public static void navigateToLogin() {
 		DriverFactory.navigateTo("http://www.inmrobo.tk/accounts/login/");
 	}
 	
-	public static void inserirUsuario(String nomeUsuario) {
+	public static void insertUser(String nomeUsuario) {
 		DriverFactory.setText("//input[@name='username']", nomeUsuario);
 	}
 	
-	public static void inserirSenha(String senhaUsuario){
+	public static void insertPassword(String senhaUsuario){
 		DriverFactory.setText("//input[@type='password']", senhaUsuario);
 	}
 	
-	public static void clicaEntre(){
+	public static void submit(){
 		DriverFactory.click("//button[@class='login100-form-btn']");
 	}
 	
-	public static void verificarErro() {
+	public static void verifyErrorMessage() {
 		Assert.assertTrue(DriverFactory.verifyElementPresent("//strong[contains(text(), 'ERRO!')]"));
 	}
 	

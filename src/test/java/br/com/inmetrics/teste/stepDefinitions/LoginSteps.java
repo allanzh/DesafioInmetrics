@@ -7,33 +7,32 @@ public class LoginSteps {
 	
 	@Given("Usuario deseja efetuar login no sistema")
 	public void acessarLogin(){
-		System.out.println("login");
-		LoginPage.acessarLogin();
+		LoginPage.navigateToLogin();
 	}
 	
 	@When("o usuario digitar o login")
 	public void digitarUsuario(){
-		LoginPage.inserirUsuario("allaninmetrics");
+		LoginPage.insertUser("allaninmetrics");
 	}
 	
 	@And ("o usuario digitar a senha")
 	public void digitarSenha(){
-		LoginPage.inserirSenha("inmetrics");
+		LoginPage.insertPassword("inmetrics");
 	}
 	
 	@Then ("ele sera direcionado para a home")
 	public void clicarEntre(){
-		LoginPage.clicaEntre();
+		LoginPage.submit();
 	}
 	
 	@When("o usuario digitar o login errado")
 	public void digitarUsuarioErrado(){
-		LoginPage.inserirUsuario("xpto");
+		LoginPage.insertUser("xpto");
 	}
 	
 	@Then("o sistema notificará um erro")
 	public void verificaErroCredenciais(){
-		LoginPage.clicaEntre();
-		LoginPage.verificarErro();
+		LoginPage.submit();
+		LoginPage.verifyErrorMessage();
 	}
 }
