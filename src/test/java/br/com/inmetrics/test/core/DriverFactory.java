@@ -12,7 +12,7 @@ public class DriverFactory {
 	}
 		
 	private static void createDriver() {
-		System.setProperty("webdriver.chrome.driver","C:/GitPessoal/java/teste-inmetrics/src/test/resources/Drivers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:/GitPessoal/java/DesafioInmetrics/src/test/resources/Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 	
