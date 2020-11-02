@@ -1,5 +1,6 @@
 package br.com.inmetrics.teste.stepDefinitions;
 
+import br.com.inmetrics.test.page.EmpregadosPage;
 import br.com.inmetrics.test.page.LoginPage;
 import io.cucumber.java.en.*;
 
@@ -23,7 +24,7 @@ public class LoginSteps {
 	@Then ("ele sera direcionado para a listagem de empregados")
 	public void clicarEntre(){
 		LoginPage.submit();
-		LoginPage.verifyIfLoggedIn();
+		EmpregadosPage.verifyIfLoggedIn();
 	}
 	
 	

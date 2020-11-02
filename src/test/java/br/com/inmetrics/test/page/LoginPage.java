@@ -24,7 +24,4 @@ public class LoginPage {
 		Assert.assertTrue(DriverFactory.verifyElementPresent("//strong[contains(text(), 'ERRO!')]"));
 	}
 	
-	public static void verifyIfLoggedIn() {
-		Assert.assertTrue(DriverFactory.verifyElementPresent("//a[.='Sair']"));
-	}
 }
