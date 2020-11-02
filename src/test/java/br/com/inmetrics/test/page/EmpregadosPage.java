@@ -38,23 +38,23 @@ public class EmpregadosPage {
 	}
 
 	public static void verifyNameMatches(String name) {
-		Assert.assertTrue(DriverFactory.getText("(//td)[1]") == name);
+		Assert.assertEquals(name, DriverFactory.getText("(//td)[1]"));
 	}
 
 	public static void verifyCPFMatches(String cpf) {
-		Assert.assertTrue(DriverFactory.getText("(//td)[2]") == cpf);
+		Assert.assertEquals(cpf, DriverFactory.getText("(//td)[2]"));
 	}
 
 	public static void verifyGenderMatches(String gender) {
-		Assert.assertTrue(DriverFactory.getText("(//td)[3]") == gender);
+		Assert.assertEquals(gender, DriverFactory.getText("(//td)[3]"));
 	}
 
 	public static void verifyRoleMatches(String role) {
-		Assert.assertTrue(DriverFactory.getText("(//td)[4]") == role);
+		Assert.assertEquals(role, DriverFactory.getText("(//td)[4]"));
 	}
 
 	public static void verifyAdmissionDateMatches(String admissionDate) {
-		Assert.assertTrue(DriverFactory.getText("(//td)[5]") == admissionDate);
+		Assert.assertEquals(admissionDate, DriverFactory.getText("(//td)[5]"));
 	}
 
 	public static void verifyEmployeeDataMatches(String name, String cpf, String gender, String role, String admissionDate) 

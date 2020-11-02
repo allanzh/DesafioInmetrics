@@ -1,8 +1,13 @@
 package br.com.inmetrics.test.page;
 
+import java.util.Locale;
+import com.github.javafaker.Faker;
 import br.com.inmetrics.test.core.DriverFactory;
+import br.com.inmetrics.teste.support.Utils;
 
 public class NewEmpregadoPage {
+	
+	public static String name, CPF, gender, admissionDate, role, salary, contractModel;
 
 	public static void insertName(String value) {
 		DriverFactory.setText("//input[@id='inputNome']", value);
@@ -16,16 +21,19 @@ public class NewEmpregadoPage {
 		DriverFactory.click("//select[@id='slctSexo']");
 
 		switch (gender) {
-		case "Masculino":
+		case "Male":
 			DriverFactory.click("//option[.='Masculino'] ");
+			NewEmpregadoPage.gender = "Masculino";
 			break;
 
-		case "Feminino":
+		case "Female":
 			DriverFactory.click("//option[.='Feminino']");
+			NewEmpregadoPage.gender = "Feminino";
 			break;
 
-		case "Indiferente":
+		default:
 			DriverFactory.click("//option[.='Indiferente']");
+			NewEmpregadoPage.gender = "Indefinido";
 			break;
 		}
 
@@ -64,14 +72,29 @@ public class NewEmpregadoPage {
 	}
 	
 	public static void createNewEmployee() {
-		insertName("José da Silva");
-		insertCPF("459.423.810-62");
-		selectGender("Indiferente");
-		insertAdmissionDate("12/01/2020");
-		insertRole("Analista de QA");
-		insertSalary("150000");
-		chooseContractModel("clt");
+		generateEmployeeData();
+		
+		insertName(name);
+		insertCPF(CPF);
+		selectGender(gender);
+		insertAdmissionDate(admissionDate);
+		insertRole(role);
+		insertSalary(salary);
+		chooseContractModel(contractModel);
+		DriverFactory.delay(1000);
 		submit();
+	}
+	
+	public static void generateEmployeeData() {
+		Faker fake = new Faker(new Locale("pt-BR"));		
+		name = fake.name().fullName().toString();
+		CPF = Utils.gerarCPF(true); 
+		gender = fake.demographic().sex().toString();
+		admissionDate = Utils.todayDateFormatted();
+		role = fake.job().title().toString();
+		salary = "100000";
+		contractModel = "clt";
+		
 	}
 	
 }

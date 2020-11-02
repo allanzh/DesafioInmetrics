@@ -24,8 +24,10 @@ public class FuncionarioSteps {
 	
 	@E("o cadastro foi efetuado e consta na lista de funcionários")
 	public void verificarCadastroPreenchido() {
-		EmpregadosPage.searchEmployee("459.423.810-62");
-		EmpregadosPage.verifyEmployeeDataMatches("José da Silva", "459.423.810-62", "Indefinido", "Analista de QA", "12/01/2020");
+		EmpregadosPage.searchEmployee(NewEmpregadoPage.CPF);
+		EmpregadosPage.verifyEmployeeDataMatches(NewEmpregadoPage.name, 
+				NewEmpregadoPage.CPF, NewEmpregadoPage.gender,
+				NewEmpregadoPage.role, NewEmpregadoPage.admissionDate);
 	}
 	
 }
