@@ -5,19 +5,19 @@ import io.cucumber.java.en.*;
 
 public class LoginSteps {
 	
-	@Given("Usuario deseja efetuar login no sistema")
+	@Given("que o Usuario deseja efetuar login no sistema")
 	public void acessarLogin(){
 		LoginPage.navigateToLogin();
 	}
 	
-	@When("o usuario digitar o login")
-	public void digitarUsuario(){
-		LoginPage.insertUser("allaninmetrics");
+	@When("o usuario digitar o {string}")
+	public void digitarUsuario(String login){
+		LoginPage.insertUser(login);
 	}
 	
-	@And ("o usuario digitar a senha")
-	public void digitarSenha(){
-		LoginPage.insertPassword("inmetrics");
+	@And ("o usuario digitar a {string}")
+	public void digitarSenha(String senha){
+		LoginPage.insertPassword(senha);
 	}
 	
 	@Then ("ele sera direcionado para a home")
@@ -25,10 +25,6 @@ public class LoginSteps {
 		LoginPage.submit();
 	}
 	
-	@When("o usuario digitar o login errado")
-	public void digitarUsuarioErrado(){
-		LoginPage.insertUser("xpto");
-	}
 	
 	@Then("o sistema notificará um erro")
 	public void verificaErroCredenciais(){
