@@ -6,7 +6,7 @@ Cenario: Verificar login com credenciais válidas
 Dado que o Usuario deseja efetuar login no sistema
 Quando o usuario digitar o "<login>"
 E o usuario digitar a "<senha>"
-Entao ele sera direcionado para a home
+Entao ele sera direcionado para a listagem de empregados
 
 Exemplos:
 | login | senha |

@@ -9,6 +9,6 @@ import io.cucumber.junit.CucumberOptions;
 		features="src/test/resources/Features", 
 		glue= {"br.com.inmetrics.teste.stepDefinitions"}, 
 		monochrome=true,
-		plugin= {"pretty", "html:target/HtmlReports/xpto.html"})
+		plugin= {"pretty", "html:target/HtmlReports/Report.html"})
 
 public class RunCucumberTest{}

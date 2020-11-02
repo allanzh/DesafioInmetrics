@@ -20,9 +20,10 @@ public class LoginSteps {
 		LoginPage.insertPassword(senha);
 	}
 	
-	@Then ("ele sera direcionado para a home")
+	@Then ("ele sera direcionado para a listagem de empregados")
 	public void clicarEntre(){
 		LoginPage.submit();
+		LoginPage.verifyIfLoggedIn();
 	}
 	
 	
