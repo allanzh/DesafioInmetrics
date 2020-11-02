@@ -39,4 +39,9 @@ public class DriverFactory {
 	public static Boolean verifyElementPresent(String xpath) {
 		return (driver.findElement(By.xpath(xpath)) != null);
 	}
+	
+	public static String getText(String xpath) {
+		return DriverFactory.getDriver().findElement(By.xpath(xpath)).getText();
+	}
+	
 }
