@@ -69,7 +69,7 @@ public class NewEmpregadoPage {
 		selectGender("Indiferente");
 		insertAdmissionDate("12/01/2020");
 		insertRole("Analista de QA");
-		insertSalary("1500");
+		insertSalary("150000");
 		chooseContractModel("clt");
 		submit();
 	}
