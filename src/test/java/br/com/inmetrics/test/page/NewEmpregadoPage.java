@@ -62,4 +62,16 @@ public class NewEmpregadoPage {
 	public static void reset() {
 		DriverFactory.click("//input[@type='reset']");
 	}
+	
+	public static void createNewEmployee() {
+		insertName("José da Silva");
+		insertCPF("459.423.810-62");
+		selectGender("Indiferente");
+		insertAdmissionDate("12/01/2020");
+		insertRole("Analista de QA");
+		insertSalary("1500");
+		chooseContractModel("clt");
+		submit();
+	}
+	
 }
