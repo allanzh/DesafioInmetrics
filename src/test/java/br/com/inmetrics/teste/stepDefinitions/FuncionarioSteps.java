@@ -18,7 +18,7 @@ public class FuncionarioSteps {
 	}
 	
 	@Entao("o sistema deverá válidar que os campos foram preenchidos com sucesso") 
-	public void verificarSucesso() {
+	public void verificarSucessoCadastro() {
 		EmpregadosPage.employeeRegistredMessage();
 	}
 	
@@ -28,6 +28,27 @@ public class FuncionarioSteps {
 		EmpregadosPage.verifyEmployeeDataMatches(NewEmpregadoPage.name, 
 				NewEmpregadoPage.CPF, NewEmpregadoPage.gender,
 				NewEmpregadoPage.role, NewEmpregadoPage.admissionDate);
+	}
+	
+	
+	@Dado ("que sou usuário logado e desejo editar um funcionário pré-existente")
+	public void editarFuncionario() {
+		
+	}
+	
+	@Quando ("clicar para editar o usuário e editar o {string} e {string} do funcionário, confirmando as alterações")
+	public void alterarDadosFuncionario(String nome, String cargo) {
+		
+	}
+	
+	@Então ("serei direcionado para a listagem de funcionários e o sistema mostrará uma mensagem de confirmação")
+	public void verificarSucessoEdicao() {
+		
+	}
+	
+	@E ("ao pesquisar pelo CPF do funcionário editado, os dados editados estarão atualizados")
+	public void conferirEdicao() {
+		
 	}
 	
 }
