@@ -1,6 +1,15 @@
 package br.com.inmetrics.teste.support;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Utils {
+	
+	public static String todayDateFormatted() {
+		Date dt = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		return formatter.format(dt);
+	}
 	
 	//https://github.com/jrjuniorsp/GeradorValidadorCPFCNPJ/blob/master/src/com/jrmobile/service/GeradorCPF.java
 	public static String gerarCPF(Boolean formatacao) {
