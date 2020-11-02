@@ -9,7 +9,7 @@ public class EmpregadosPage {
 		Assert.assertTrue(DriverFactory.verifyElementPresent("//a[.='Sair']"));
 	}
 	
-	public static void createNewEmployee() {
+	public static void navigateToNewEmployee() {
 		DriverFactory.click("//a[.='Novo Funcionário']");
 	}
 	
@@ -32,4 +32,14 @@ public class EmpregadosPage {
 	public static void previousPageResult() {
 		DriverFactory.click("//a[.='Anterior']");
 	}
+	
+	public static void employeeRegistredMessage() {
+		DriverFactory.verifyElementPresent("//strong[contains(text(),'SUCESSO!')]");
+	}
+	
+	public static void verifyCPFMatches(String cpf) {
+		String Row1CPF = DriverFactory.getText("(//td)[2]");
+		Assert.assertTrue(Row1CPF == cpf);
+	}
+	
 }
