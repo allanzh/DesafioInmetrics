@@ -12,7 +12,7 @@ public class EmpregadosPage {
 	public static void navigateToNewEmployee() {
 		DriverFactory.click("//a[.='Novo Funcionário']");
 	}
-
+	
 	public static void editEmployee() {
 		DriverFactory.click("(//a[contains(@href, '/empregados/edit')])[1]");
 	}
@@ -23,6 +23,7 @@ public class EmpregadosPage {
 
 	public static void searchEmployee(String query) {
 		DriverFactory.setText("//input[@type='search']", query);
+		DriverFactory.delay(2000);
 	}
 
 	public static void nextPageResult() {
@@ -34,6 +35,10 @@ public class EmpregadosPage {
 	}
 
 	public static void employeeRegistredMessage() {
+		DriverFactory.verifyElementPresent("//strong[contains(text(),'SUCESSO!')]");
+	}
+	
+	public static void employeeDeletedMessage() {
 		DriverFactory.verifyElementPresent("//strong[contains(text(),'SUCESSO!')]");
 	}
 
@@ -55,6 +60,10 @@ public class EmpregadosPage {
 
 	public static void verifyAdmissionDateMatches(String admissionDate) {
 		Assert.assertEquals(admissionDate, DriverFactory.getText("(//td)[5]"));
+	}
+	
+	public static void verifyEmptyDataTable() {
+		DriverFactory.verifyElementPresent("//td[@class='dataTables_empty']");
 	}
 
 	public static void verifyEmployeeDataMatches(String name, String cpf, String gender, String role, String admissionDate) 

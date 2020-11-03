@@ -6,6 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+		//tags="@rodar",
 		features="src/test/resources/Features", 
 		glue= {"br.com.inmetrics.teste.stepDefinitions"}, 
 		monochrome=true,

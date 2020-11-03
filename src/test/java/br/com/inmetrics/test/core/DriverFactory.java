@@ -41,6 +41,9 @@ public class DriverFactory {
 	}
 
 	public static void setText(String xpath, String value) {
+		if(getText(xpath) != "") {
+			driver.findElement(By.xpath(xpath)).clear();
+		}
 		driver.findElement(By.xpath(xpath)).sendKeys(value);
 	}
 

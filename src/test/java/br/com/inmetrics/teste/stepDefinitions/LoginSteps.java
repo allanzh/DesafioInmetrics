@@ -16,12 +16,12 @@ public class LoginSteps {
 		LoginPage.insertUser(login);
 	}
 	
-	@E ("o usuario digitar a {string}")
+	@E("o usuario digitar a {string}")
 	public void digitarSenha(String senha){
 		LoginPage.insertPassword(senha);
 	}
 	
-	@Entao ("ele sera direcionado para a listagem de empregados")
+	@Entao("ele sera direcionado para a listagem de empregados")
 	public void clicarEntre(){
 		LoginPage.submit();
 		EmpregadosPage.verifyIfLoggedIn();
